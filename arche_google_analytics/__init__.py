@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from logging import getLogger
@@ -26,9 +27,9 @@ class RenderGA(object):
     def __init__(self, ga_code):
         self.ga_code = ga_code
         self.ga_tpl = _ga_default_tpl
-    
+
     def __call__(self, url):
-        return self.ga_tpl % self.ga_code
+        return str(self.ga_tpl % self.ga_code)
 
 
 def need_subscriber(view, *args):
